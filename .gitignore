@@ -1,0 +1,13 @@
+# Exclude large datasets but keep directory structure
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/pdfs_markdown/.gitkeep
+!data/processed/website_markdown/.gitkeep
+# Include sample files
+!data/processed/pdfs_markdown/sample1.md
+!data/processed/pdfs_markdown/sample2.md
+!data/processed/website_markdown/sample1.md
+!data/processed/website_markdown/sample2.md
+
+# Ignore environment variables
+.env

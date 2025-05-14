@@ -14,10 +14,9 @@ from markdownify import markdownify as md
 from dotenv import load_dotenv
 
 
-# Load environment variables
 load_dotenv()
 
-# File paths and directories
+
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
 RAW_DIR = os.path.join(DATA_DIR, "raw")
 PROCESSED_DIR = os.path.join(DATA_DIR, "processed")
@@ -108,7 +107,7 @@ def process_pdf_with_mistral(pdf_path, client):
         return None
 
 def process_pdfs(pdf_urls):
-    # Initialize Mistral API client
+    # Initializing Mistral API client
     api_key = os.getenv("MISTRAL_API_KEY")
     if not api_key:
         print("Error: Mistral API key not found. Please set it in your .env file.")
@@ -193,10 +192,8 @@ def main():
     pdf_urls = extract_pdfs_from_urls(urls)
     non_pdf_urls = [url for url in urls if url not in pdf_urls]
     
-    # Process PDFs
+
     process_pdfs(pdf_urls)
-    
-    # Process regular web pages
     scrape_urls_to_markdown(non_pdf_urls, MARKDOWN_DIR)
     
     print(f"Scraping completed. Data stored in {PROCESSED_DIR}")
