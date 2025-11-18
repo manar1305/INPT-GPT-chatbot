@@ -18,7 +18,7 @@ The system uses a classic **RAG architecture**:
 ### Query Processing Pipeline
 When a user asks a question:
 
-![Query RAG Pipeline](assets/embedding.avif)
+![Query RAG Pipeline](assets/retrieval.avif)
 
 1. **Retrieve** relevant documents based on the query.
 2. **Prompt** construction includes the user query + context.
@@ -30,7 +30,7 @@ When a user asks a question:
 
 Before queries can be answered, the data must be processed and stored in a vector database:
 
-![VectorDB RAG Pipeline](assets/retrieval.avif)
+![VectorDB RAG Pipeline](assets/embedding.avif)
 
 1. **Load** documents (PDFs, websites, JSON, etc.).
 2. **Split** them into smaller text chunks.
